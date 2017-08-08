@@ -1,15 +1,29 @@
 def caesar_cipher (word, key)
 
-	alphabet = ("a".."z").to_a
-	encrypted = []
+	alphabet_l = ("a".."z").to_a
+	alphabet_c = ("A".."Z").to_a
 
-	word.downcase!
+	encrypted = []
 	
 	word.each_char do |l|
-		index = alphabet.find_index(l)
-		index += key
-		puts "Encryption for #{l} is: #{alphabet[index]}"
-		encrypted << alphabet[index]
+		if l == " " # Check for spaces
+			encrypted << " "
+		elsif !alphabet_l.include?(l) && !alphabet_c.include?(l) # Check for non-alphabetic chars
+			encrypted << l
+		else
+			if alphabet_c.include?(l)
+				cap = true
+				l.downcase!
+			end 
+			index = alphabet_l.find_index(l)
+			index += key
+			puts "Encryption for #{l} is: #{alphabet_l[index]}"
+			if cap
+				encrypted << alphabet_l[index].upcase
+			else
+				encrypted << alphabet_l[index]
+			end
+		end
 	end
 	puts "Caesar Cypher for #{word} is #{encrypted.join}"
 end
