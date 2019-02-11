@@ -2,7 +2,7 @@
 
 	alphabet_l = ("a".."z").to_a
 	alphabet_c = ("A".."Z").to_a
-	puts alphabet_l.length
+	#puts alphabet_l.length
 	encrypted = []
 	
 	word.each_char do |l|
