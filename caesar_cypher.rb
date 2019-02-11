@@ -1,4 +1,4 @@
-def caesar_cipher (word, key)
+ def caesar_cipher (word, key)
 
 	alphabet_l = ("a".."z").to_a
 	alphabet_c = ("A".."Z").to_a
@@ -20,7 +20,7 @@ def caesar_cipher (word, key)
 			if index > (alphabet_l.length - 1) #wrap back to beginning
 				index -= alphabet_l.length
 			end
-			puts "Encryption for #{l} is: #{alphabet_l[index]}"
+			#puts "Encryption for #{l} is: #{alphabet_l[index]}"
 			if cap
 				encrypted << alphabet_l[index].upcase
 			else
@@ -28,11 +28,12 @@ def caesar_cipher (word, key)
 			end
 		end
 	end
-	puts "Caesar Cypher for #{word} is \n #{encrypted.join}"
+	#puts "Caesar Cypher for #{word} is \n #{encrypted.join}"
+	encrypted.join
 end
 
- puts "Enter word to encrypt:"
- w = gets.chomp
- puts " Enter key (must be an integer)"
- k = gets.chomp
- caesar_cipher(w, k.to_i)
+ #puts "Enter word to encrypt:"
+ #w = gets.chomp
+ #puts " Enter key (must be an integer)"
+ #k = gets.chomp
+ #caesar_cipher(w, k.to_i)
